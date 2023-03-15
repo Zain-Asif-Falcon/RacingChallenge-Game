@@ -15,7 +15,6 @@ public class RivalaryCarsPooler : MonoBehaviour
         if (PlayerPrefs.GetString("GameMode") == GameConstants.Hard_SceneName)
         {
             InstantiateNewCarsInPool_Hard();
-            InstantiateNewCarsInPool_Hard();
         }
         else
         {
@@ -62,16 +61,6 @@ public class RivalaryCarsPooler : MonoBehaviour
     }
     private void InstantiateNewCarsInPool_Easy()
     {
-        // int CarsCount = 0;
-        // foreach (var Car in RivalaryCarsList)
-        // {
-        //     GameObject RivalryCar = Instantiate(Car);
-        //     RivalryCar.SetActive(false);
-        //     RivalaryCarsPool.Add(RivalryCar);
-        //     CarsCount += 1;
-        //     if (CarsCount >= 6) break;
-        // }
-
         foreach (var Car in RivalaryCarsList)
         {
             GameObject RivalryCar = Instantiate(Car);
