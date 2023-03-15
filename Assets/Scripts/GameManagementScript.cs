@@ -45,16 +45,6 @@ public class GameManagementScript : MonoBehaviour
         Time.timeScale = 0;
         PausePanel.SetActive(true);
     }
-    public void ResumeGame()
-    {
-        IsStopped = false;
-        ClickSound.Play();
-        PlayCarRacingSound();
-        RivalaryCarSpawner.SetActive(true);
-        RivalryCarSpawner.instance.SpawnRivalaryCarAgainAfterStop();
-        PausePanel.SetActive(false);
-        Time.timeScale = 1;
-    }
     public void GameOver()
     {
         CarCrashingSound.Play();
@@ -67,24 +57,6 @@ public class GameManagementScript : MonoBehaviour
         //Music.Stop();
         StartCoroutine(OverTheGameAfterSomeTime());
         //SetEarnedScoreTextOnGameOver();
-    }
-    private void ActivateAnimation()
-    {
-        Transform animatorObject = ExplosionAnimation.transform.Find("ExpAnimator");
-        if (animatorObject != null)
-        {
-            Animator animator = animatorObject.GetComponent<Animator>();
-            if (animator != null)
-            {
-                animator.speed = 1;
-            }
-        }
-    }
-    IEnumerator OverTheGameAfterSomeTime()
-    {
-        yield return new WaitForSecondsRealtime(2f);
-        RivalaryCarSpawner.SetActive(false);
-        GameOverPanel.SetActive(true);
     }
     public void Restart()
     {
