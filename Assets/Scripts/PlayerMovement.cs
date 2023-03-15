@@ -47,14 +47,6 @@ public class PlayerMovement : MonoBehaviour
         PlayerCarTransformObject.position -= new Vector3(PlayerMovementSpeed * Time.deltaTime, 0, 0);
         PlayerCarTransformObject.rotation = Quaternion.Lerp(PlayerCarTransformObject.rotation, Quaternion.Euler(0, 0, 45), PlayerRotationSpeed * Time.deltaTime);
     }
-    private void MovePlayerForward()
-    {
-        PlayerCarTransformObject.position += new Vector3(0, PlayerMovementSpeed * Time.deltaTime, 0);        
-    }
-    private void MovePlayerBackward()
-    {
-        PlayerCarTransformObject.position -= new Vector3(0, PlayerMovementSpeed * Time.deltaTime, 0);
-    }
     private bool IsForwardButtonPressed = false;
     private bool IsBackwardButtonPressed = false;
     private bool IsLeftButtonPressed = false;
@@ -104,31 +96,4 @@ public class PlayerMovement : MonoBehaviour
     {
         IsRightButtonPressed = true;
     }
-    public void StopPlayerMovement()
-    {
-        IsForwardButtonPressed = false;
-        IsBackwardButtonPressed = false;
-        IsLeftButtonPressed = false;
-        IsRightButtonPressed = false;
-        IsForwardPedalSoundPlaying = false;
-        IsBreakPedalSoundPlaying = false;
-        ForwardPedalSound_Easy.Stop();
-        ForwardPedalSound_Hard.Stop();
-        BreakPedalSound_Easy.Stop();
-        BreakPedalSound_Hard.Stop();
-    }
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    if (collision.gameObject.tag == "RivalaryCar")
-    //    {
-    //        Debug.Log("Triggered");
-    //    }
-    //}
-    //private void OnCollisionEnter2D(Collision2D collision)
-    //{
-    //    if (collision.gameObject.tag == "RivalaryCar")
-    //    {
-    //        Debug.Log("Collided");
-    //    }
-    //}
 }
