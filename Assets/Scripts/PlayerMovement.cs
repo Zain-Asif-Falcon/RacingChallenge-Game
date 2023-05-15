@@ -74,26 +74,5 @@ public class PlayerMovement : MonoBehaviour
             IsForwardPedalSoundPlaying = true;
         }            
     }
-    public void KeepPlayerMovingBackward()
-    {
-        IsBackwardButtonPressed = true;
-        if(IsBreakPedalSoundPlaying)
-        {
-            return;
-        } 
-        else
-        {
-            if (PlayerPrefs.GetString("GameMode") == GameConstants.Easy_SceneName) BreakPedalSound_Easy.Play();
-            else BreakPedalSound_Hard.Play();
-            IsBreakPedalSoundPlaying = true;
-        }
-    }
-    public void KeepPlayerMovingLeft()
-    {
-        IsLeftButtonPressed = true;
-    }
-    public void KeepPlayerMovingRight()
-    {
-        IsRightButtonPressed = true;
-    }
+   
 }
